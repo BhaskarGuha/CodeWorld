@@ -2,7 +2,7 @@
 using namespace std;
 int main()
 {
-    int a[3][3],i,j,search_value,key = 0,key2 = 0;
+    int a[3][3],i,j,search_value,key = -1,key2 = -1;
     cout<<"Enter your elements: "<<endl;
     for(i=0;i<3;i++)
     {
@@ -29,14 +29,16 @@ int main()
         {
            if(a[i][j] == search_value)
            {
+                key = 0;
                 key = i;
+                key2 = 0;
                 key2 = j;
                 break;
            } 
         }
 
     }
-    if(key == 3 && key2 == 3)
+    if(key == -1 && key2 == -1)
     {
         cout<<"No elements is found";
     }
